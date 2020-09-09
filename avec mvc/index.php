@@ -1,9 +1,10 @@
+<?php ob_start(); ?>
 <?php session_start(); ?>
-
 <?php
 require_once("vues/header.php");
 require_once("modeles/monPdo.php");
 require_once("modeles/Continent.php");
+require_once("vues/messageFlash.php");
 
 $uc = empty($_GET["uc"]) ? "accueil" : $_GET["uc"];
 

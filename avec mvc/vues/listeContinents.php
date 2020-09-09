@@ -3,7 +3,7 @@
         <div class="col-9">
             <h2>Liste des Continents</h2>
         </div>
-        <div class="col-3"><a href="formNationalite.php?action=Ajouter" class="btn btn-success"><i class="fas fa-plus"></i> crée un continent</a></div>
+        <div class="col-3"><a href="index.php?uc=continents&action=add" class="btn btn-success"><i class="fas fa-plus"></i> crée un continent</a></div>
     </div>
     <table class="table table-hover table-striped">
         <thead>
@@ -21,8 +21,8 @@
                 echo "<td class='col-md-8'>" . $continent->getLibelle() . "</td>";
                 echo
                     "<td class='col-md-2'>
-                        <a href='formNationalite.php?action=Modifier&num=" . $continent->getNum() . "'class='btn btn-primary'><i class='fas fa-pen'></i></a>
-                        <a href='#modalSup' data-toggle='modal' data-message='Voulez vous supprimer cette nationalité ?' data-suppression='supprimerNationalite.php?num=" . $continent->getNum() . "'  class='btn btn-danger'><i class='fas fa-trash'></i></a>
+                        <a href='index.php?uc=continents&action=update&num=" . $continent->getNum() . "'class='btn btn-primary'><i class='fas fa-pen'></i></a>
+                        <a href='#modalSup' data-toggle='modal' data-message='Voulez vous supprimer ce continent ?' data-suppression='index.php?uc=continents&action=delete&num=" . $continent->getNum() . "'  class='btn btn-danger'><i class='fas fa-trash'></i></a>
                     </td>";
                 echo "</tr>";
             }
