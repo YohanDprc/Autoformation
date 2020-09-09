@@ -2,6 +2,8 @@
 
 <?php
 require_once("vues/header.php");
+require_once("modeles/monPdo.php");
+require_once("modeles/Continent.php");
 
 $uc = empty($_GET["uc"]) ? "accueil" : $_GET["uc"];
 
@@ -10,6 +12,7 @@ switch ($uc) {
         require_once("vues/accueil.php");
         break;
     case 'continents':
+        require_once("controllers/continentController.php");
         break;
 }
 

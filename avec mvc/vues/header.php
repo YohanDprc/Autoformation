@@ -75,6 +75,28 @@
                         <a class="dropdown-item" href="formNationalite.php?action=Ajouter">Ajouter une nationalités</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion des continents</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="index.php?uc=continents&action=list">Listes des continents</a>
+                        <a class="dropdown-item" href="#">Ajouter un continent</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
+<?php
+    if (!empty($_SESSION['message'])) {
+    $mesMessages = $_SESSION['message'];
+    foreach ($mesMessages as $key => $message) {
+        echo '<div class="container pt-5">
+        <div class="alert alert-' . $key . ' alert-dismissible fade show" role="alert">' . $message . '
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      </div>';
+    }
+    $_SESSION['message'] = [];
+}
+?>
